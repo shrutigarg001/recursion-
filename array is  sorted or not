@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std; 
+
+bool linear(int arr[], int n) 
+{ 
+   
+  if(n == 0 || n == 1) 
+    return true; 
+
+  else if(arr[0] > arr[1]) 
+    return false; 
+
+  else 
+  {
+    bool ans=linear(arr+1, n-1); 
+
+  return ans; 
+    }
+}
+int main() {
+    int arr[]={2, 4, 6, 8, 9}; 
+
+    bool ans=linear(arr, 5); 
+
+    cout << ans; 
+    return 0;
+} 
