@@ -1,0 +1,21 @@
+class Solution {
+public: 
+    bool solve(int n, long long int integer) {
+        if(integer > n) {
+            return false; 
+        } 
+        
+        if(integer == n) {
+            return true; 
+        } 
+        
+        //solve(n, integer*4); 
+        return solve(n, integer*4); 
+    }
+    bool isPowerOfFour(int n) { 
+        if(n == 1) {
+            return true; 
+        }
+        return solve(n, 4); 
+    }
+}; 
