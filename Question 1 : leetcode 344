@@ -1,0 +1,17 @@
+class Solution {
+public: 
+    void reverse(vector<char>& s, int leftPointer, int rightPointer){ 
+       if(leftPointer > rightPointer){
+            
+           return; 
+       }
+        swap(s[leftPointer], s[rightPointer]);
+        reverse(s, leftPointer+1, rightPointer-1); 
+    } 
+    
+    void reverseString(vector<char>& s) {
+        reverse(s, 0, s.size()-1); 
+    }
+}; 
+
+// time complexity : o(n) 
