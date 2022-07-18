@@ -1,0 +1,31 @@
+class Solution {
+public: 
+    int winner(queue<int> &q, int n, int k) {
+   if(q.size() == 1) {
+      return q.front(); 
+   } 
+   int k1=k; 
+   while(k != 0) { 
+     if(k == 1) {
+        q.pop();
+     }
+     else {
+     int front=q.front(); 
+     q.push(front); 
+     q.pop(); 
+      } 
+     k--; 
+     } 
+   
+  return winner(q, n, k1); 
+} 
+    int findTheWinner(int n, int k) {
+        queue<int> q; 
+
+    for(int i=1; i<=n; i++) {
+       q.push(i); 
+    } 
+
+    return winner(q, n, k); 
+    }
+}; 
